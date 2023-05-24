@@ -10,5 +10,14 @@ public class SelectCounter : MonoBehaviour
         Debug.Log("Entered Cube");
         hoverCounter++;
         Debug.Log(hoverCounter);
+
+        if (hoverCounter == 10)
+        {
+            if (GameManager.instance.currentState == GameManager.GameState.InGame)
+            {
+                GameManager.instance.currentState = GameManager.GameState.GameOver;
+            }
+        }
+
     }
 }
